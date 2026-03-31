@@ -7,7 +7,6 @@ def cache(func: Callable) -> Callable:
 
     @wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        # Формуємо ключ з позиційних і іменованих аргументів
         key = (args, tuple(sorted(kwargs.items())))
 
         if key in storage:
